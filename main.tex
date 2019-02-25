@@ -1,0 +1,539 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+% \usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+% \usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+% \usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{multicol}
+\usepackage{subfig}
+\usepackage{amsmath}
+% \usepackage{subcaption}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Gephi Tutorial: Quick Start]{Gephi Tutorial: Quick Start} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Yifan Qian, Pietro Panzarasa} % Your name
+\institute[QMUL] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+BUSM132 Complex Networks and Innovation \\
+Queen Mary University of London \\ % Your institution for the title page
+% \medskip
+% \textit{john@smith.com} % Your email address
+}
+% \date{\today} % Date, can be changed to a custom date
+\date{March 14, 2018} 
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+
+% \begin{frame}
+% \frametitle{Overview} % Table of contents slide, comment this block out to remove it
+% \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+% \end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+% \section{First Section} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+
+% \subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
+\begin{frame}
+\frametitle{Introduction of Gephi}
+\begin{itemize}
+\item Gephi is the leading visualization and exploration software for all kinds of networks. It is open-source and free. \\~\\
+\item Gephi works on Windows, Mac OS and Linux, and can be downloaded and installed by following the official guide (https://gephi.org/users/install/).
+\end{itemize}
+\begin{columns}
+\column{0.3\linewidth}
+\centering
+\includegraphics[height=3cm, width=3cm]{figures/gephi.jpg}
+\column{0.7\linewidth}
+Features (See video: https://gephi.org/features/)
+\begin{multicols}{3}
+\begin{itemize}
+\item Real-time visualization
+\item Layout
+\item Metrics
+\item Networks over time
+% \item Create cartography
+\item Dynamic filtering
+\item Data Table and Edition
+% \item Input/Output
+\item Extensible
+\end{itemize}
+\end{multicols}
+\end{columns} 
+\end{frame}
+
+\begin{frame}
+In today's session, we will guide you to the basic steps of network \alert{visualisation} and \alert{metrics calculation} in Gephi.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Let's Open a Graph File}
+\begin{itemize}
+\item Download the file from https://gephi.org/datasets/LesMiserables.gexf
+\item In the menu bar, go to \textbf{"File Menu"} and \textbf{"Open"} LesMiserables.gexf.
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=0.4\linewidth]{figures/open.png}
+\end{figure}
+
+What is a .gexf file? gexf stands for Graph Exchange XML format and it is language for describing complex networks, their associated data and dynamics. It started with Gephi project in 2007. \\
+https://gephi.org/gexf/format/ 
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Import Report}
+
+After your file is opened, you can see a summary report of data found and issues.
+\begin{itemize}
+	\item number of nodes
+	\item number of edges
+	\item type of graph (undirected/directed)
+\end{itemize}
+\begin{figure}
+\includegraphics[width=0.5\linewidth]{figures/import_report.png}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Congrats! You should now see your first network in Gephi!}
+
+We have imported "Les Miserables" dataset. Co-appearance weighted network of
+characters in the novel "Les Miserables" from Victor Hugo. \\~\\
+
+In the \textbf{"Graph"} module, you may see a slightly different representation as node position is random at first.
+\begin{figure}
+\includegraphics[width=0.5\linewidth]{figures/initial_network.png}
+\end{figure}
+% $^1$D. E. Knuth, The Stanford GraphBase: A Platform for Combinatorial Computing, Addison-Wesley, Reading, MA (1993).
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Network Visualisation}
+% The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
+You can manipulate the network visualisation in \textbf{"Graph"} module with your mouse and function buttons. \\~\\
+For example:
+\begin{columns}[c] 
+\column{.6\textwidth} % Left column and width
+\begin{itemize}
+\item Use you mouse to move and scale the visualisation
+	\begin{itemize}
+		\item Zoom: mouse wheel
+		\item Drag: right mouse drag
+	\end{itemize}
+\item Reset your network position
+\item You can hover your mouse over the buttons to check their functions
+\end{itemize}
+
+\column{.4\textwidth} % Right column and width
+\begin{figure}
+\includegraphics[width=0.5\linewidth]{figures/reset_position.png}
+\end{figure}
+
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Network layout}
+Layout algorithms sets the network shape, it is the most essential action. \\~\\
+
+\begin{columns}[c] 
+\column{.6\textwidth} % Left column and width
+\begin{itemize}
+\item \textbf{"Layout"} module is located at the bottom left
+\item Choose \textbf{"Force Atlas"}
+\item Click on the \textbf{"run"} to start the algorithm with default values. You will see a network visualisation below. (\textcolor{red}{Too compact!})
+\begin{figure}
+\includegraphics[width=0.3\linewidth]{figures/network_with_layout_default.png}
+\end{figure}
+\end{itemize}
+
+\column{.4\textwidth} % Right column and width
+\begin{figure}
+\includegraphics[width=0.5\linewidth]{figures/layout_default.png}
+\end{figure}
+\end{columns}
+
+\begin{block}{Layout algorithms}
+Network layouts are usually shown with \textbf{"Force-based"} algorithms. Their principle is simple, linked nodes attract each other and non-linked nodes are pushed apart.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Tune the layout}
+The purpose of \textbf{"Layout Properties"} is to let you control the algorithm in order to make a pleasing representation. \\~\\
+
+\begin{columns}[c] 
+\column{.6\textwidth} % Left column and width
+\begin{itemize}
+\item Set the \textbf{"Repulsion strengh"} at 10,000 to expand the graph.
+\item Type \textbf{"Enter"} to validate the changed value.
+\item When the layout is stable, click on \textbf{"stop"} to stop the algorithm
+\end{itemize}
+
+\column{.4\textwidth} % Right column and width
+\begin{figure}
+\includegraphics[width=0.5\linewidth]{figures/layout_controled.png}
+\end{figure}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Network with proper layout}
+\begin{figure}
+\includegraphics[width=0.4\linewidth]{figures/network_with_layout_controlled.png}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Network metrics}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figures/metrics.png}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Centralities in Gephi}
+
+\begin{columns}[c] 
+\column{.4\textwidth} % Left column and width
+Degree:
+\begin{itemize}
+\item Click the \textbf{"run"} button of Average Degree
+\item You should see a degree report
+\end{itemize}
+
+\column{.6\textwidth} % Right column and width
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figures/degree.png}
+\end{figure}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Centralities in Gephi}
+
+\begin{columns}[c] 
+\column{.4\textwidth} % Left column and width
+Betweeness, Closeness:
+\begin{itemize}
+\item Click the \textbf{"run"} button of Avg. Path Length
+\item Selected \textbf{"Undirected"} and \textbf{"Normalize Centralities in [0,1]"}
+\item You should see a graph distance report
+\end{itemize}
+
+\column{.6\textwidth} % Right column and width
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figures/centrality_choice.png}
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figures/betweeness.png}
+\end{figure}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Appearance of Nodes: Size}
+
+\begin{columns}[c] 
+\column{.4\textwidth} % Left column and width
+\begin{itemize}
+\item Locate \textbf{"Appearance"} module and click on \textbf{"Nodes"}
+\item Click on \textbf{"Size"} icon
+\item Click on \textbf{"Attribute"} icon and select \textbf{"Degree"} as attribute
+\item Click on \textbf{"Apply"}
+\end{itemize}
+\column{.6\textwidth} % Right column and width
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{figures/node_size.png}
+\end{figure}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Appearance of Nodes: Size}
+You shouls see a network with node size based on its degree.
+\begin{figure}
+\includegraphics[width=0.4\linewidth]{figures/network_with_node_size.png}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Appearance of Nodes: Colour}
+
+\begin{columns}[c] 
+\column{.4\textwidth} % Left column and width
+\begin{itemize}
+\item Locate \textbf{"Appearance"} module and click on \textbf{"Nodes"}
+\item Click on \textbf{"Colour"} icon
+\item Click on \textbf{"Attribute"} icon and select \textbf{"Closeness Centrality"} as attribute
+\item Click on \textbf{"Apply"}
+\end{itemize}
+\column{.6\textwidth} % Right column and width
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{figures/node_colour.png}
+\end{figure}
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Appearance of Nodes: Colour}
+You should see a network with node colour based on its closeness centrality.
+\begin{figure}
+\includegraphics[width=0.4\linewidth]{figures/network_with_node_colour.png}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Layout again}
+The layout is not completely satisfying, as big nodes can overlap smaller ones. \\~\\
+
+The \textbf{"Force Atlas"} algorithm has an option to take node size in account when layouting. You can see nodes are not overlapping anymore.
+
+\begin{figure}
+\centering
+\begin{minipage}{.45\textwidth}
+\centering
+\includegraphics[width=0.8\linewidth]{figures/adjust_by_size.png}
+\end{minipage}
+\begin{minipage}{.45\textwidth}
+\centering
+\includegraphics[width=0.8\linewidth]{figures/network_adjusted_by_size.png}
+\end{minipage}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Show node labels}
+Let's add labels to the nodes.
+
+\begin{itemize}
+	\item Display node labels
+	\begin{figure}
+		\includegraphics[width=0.4\linewidth]{figures/show_labels.png}
+	\end{figure}
+	\item Set label size proportional to node size
+	\begin{figure}
+		\includegraphics[width=0.4\linewidth]{figures/node_size_label_mode.png}
+	\end{figure}
+	\item Set label size with the scale slider
+	\begin{figure}
+		\includegraphics[width=0.4\linewidth]{figures/label_size_scale.png}
+	\end{figure}
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Show node labels}
+What the network looks like now:
+
+\begin{figure}
+	\includegraphics[width=0.4\linewidth]{figures/network_with_labels.png}
+\end{figure}
+
+That ends the manipulation. We will now preview the rendering and prepare to export.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Preview}
+\begin{itemize}
+	\item Before exporting your graph as a SVG or PDF file, go to the \textbf{"Preview"}.
+
+	\item Select the \textbf{"Preview"} tab in the banner:
+		\begin{figure}
+			\includegraphics[width=0.4\linewidth]{figures/preview.png}
+		\end{figure}
+	\item Click on preview settings, select \textbf{"Show Labels"} ans set font size to 5
+		\begin{figure}
+			\includegraphics[width=0.4\linewidth]{figures/preview_font.png}
+		\end{figure}
+	\item Click on \textbf{"Refresh"} to see the preview
+		\begin{figure}
+			\includegraphics[width=0.4\linewidth]{figures/refresh.png}
+		\end{figure}
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{The previewed network}
+\begin{figure}
+	\includegraphics[width=0.4\linewidth]{figures/preview_final.png}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Export}
+From \textbf{"Preview"}, click on \textbf{"SVG/PDF/PNG"} near \textbf{"Export"} and select one format you would like to use:
+\begin{figure}
+	\includegraphics[width=0.4\linewidth]{figures/export.png}
+\end{figure}
+\begin{block}{SVG}
+SVG Files are vectorial graphics, like PDF. Images scale smoothly to different sizes and
+can therefore be printed or integrated in high-resolution presentation. Transform and manipulate SVG files in Inkscape or Adobe Illustrator.
+\end{block}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Save your project}
+Saving your project encapsulates all data and results in a single session file.
+\begin{figure}
+\centering
+\begin{minipage}{.45\textwidth}
+\centering
+\includegraphics[width=0.8\linewidth]{figures/save.png}
+\end{minipage}
+\begin{minipage}{.45\textwidth}
+\centering
+\includegraphics[width=0.8\linewidth]{figures/saved_file.png}
+\end{minipage}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Conclusion}
+In this tutorial you learned the basic process to open, visualize, manipulate and render
+a network file with Gephi.
+\begin{figure}
+\centering
+\begin{minipage}{.3\textwidth}
+\centering
+\includegraphics[width=0.8\linewidth]{figures/network_with_layout_controlled.png}
+\end{minipage}
+$\rightarrow$
+\begin{minipage}{.3\textwidth}
+\centering
+\includegraphics[width=0.8\linewidth]{figures/network_with_labels.png}
+\end{minipage}
+$\rightarrow$
+\begin{minipage}{.3\textwidth}
+\centering
+\includegraphics[width=0.8\linewidth]{figures/preview_final.png}
+\end{minipage}
+\end{figure}
+
+If you are interested and would like go further:
+\begin{itemize}
+	\item Learn how to use Gephi: https://gephi.org/users/
+	\item Gephi datasets: https://github.com/gephi/gephi/wiki/Datasets
+	\item Import data from csv: https://github.com/gephi/gephi/wiki/Import-CSV-Data
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\Huge{\centerline{The End}}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 
